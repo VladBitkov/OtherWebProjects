@@ -1,0 +1,100 @@
+@import "nullstyle.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+body {
+  background-color: yellow;
+}
+
+@mixin font($fontW, $color: red) {
+  font-size: $mainFontSize;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $color;
+}
+
+%lox {
+  content: "LOX";
+  display: block;
+  padding: 100px;
+  font-size: 50px;
+  line-height: 60px;
+  background-color: black;
+  color: #fff;
+}
+
+a {
+  font-size: 60px;
+  line-height: 80px;
+
+  @include link(silver, red, blue, green);
+}
+
+.header a {
+  @include link(silver, red, blue, green) {
+    background: #000;
+    &:visited {
+      color: red;
+    }
+  }
+}
+
+#grid {
+  float: left;
+  width: 100%;
+  > div {
+    @include grid(7, 15%);
+  }
+}
+
+@for $i from 24 to 29 {
+  .#{$someVar}-#{$i} {
+    width: 50px + $i;
+    height: 50px + $i;
+  }
+}
+
+.block:not(.first) {
+  @include padd(blue, 20px, 40px);
+  background-color: $bgColor;
+  min-width: $size;
+  min-height: $size;
+  margin-top: 20px;
+  border: $border;
+}
+#central_block {
+  padding: 30px;
+  ul {
+    list-style: none;
+    display: inline-block;
+    // @include font;
+  }
+  li {
+    float: left;
+    padding-right: 10px;
+    width: (100% / 3);
+
+    a {
+      @include font(400, green);
+
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+  a {
+    @include font(700);
+  }
+}
+
+#central_block > ul {
+}
+
+.first {
+  // min-height: $size - ($size / 2);
+  // min-width: $size - ($size / 2);
+  // background-color: $bgColor;
+  // border: $border;
+  // @extend %lox;
+  // display: none;
+}

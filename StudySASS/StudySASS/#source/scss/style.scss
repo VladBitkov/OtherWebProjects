@@ -1,0 +1,71 @@
+@import "nullstyle.scss";
+@import "swiper-bundle.min.scss";
+
+$fz: 100px;
+$color_1: green;
+
+%tplborder {
+  font-size: 100px;
+  border-bottom: 5px dashed red;
+}
+
+// .tplborder {
+//   font-size: 100px;
+//   border-bottom: 5px dashed red;
+// }
+
+@mixin fontz($f, $c) {
+  font-size: $f;
+  color: $c;
+}
+
+.block {
+  width: 300px / 960px * 100%;
+  padding: 30px;
+  font-size: $fz;
+  line-height: 60px;
+  background-color: gray;
+
+  &.block--big {
+    font-size: $fz;
+  }
+
+  > p {
+    color: red;
+  }
+
+  .block__text {
+    font-size: $fz;
+
+    span {
+      color: $color_1;
+    }
+  }
+
+  // .link{}
+}
+.link {
+  color: gray;
+  text-decoration: underline;
+  font-size: 20px;
+
+  .block & {
+    font-size: 100px;
+  }
+  &:hover {
+    color: black;
+  }
+  &:nth-child(2) {
+    color: red;
+  }
+  // @extend %tplborder;
+  // @extend .tplborder;
+}
+.link-2 {
+  // @include fontz(100px, green);
+
+  // @extend %tplborder;
+  // @extend .tplborder;
+
+  // border-bottom: 5px solid black;
+}
