@@ -1,0 +1,104 @@
+body {
+  padding: 50px 100px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item {
+  border: 1px solid black;
+  background-color: #57a152;
+  color: #fff;
+  padding: 15px;
+}
+
+.box {
+  display: grid;
+  /* grid-template-columns: 200px 300px auto auto; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  /* grid-template-columns: repeat(6, 1fr); */
+
+  /* grid-template-columns: 1fr 1fr 1fr; */
+
+  /* grid-template-rows: 100px 200px 150px; */
+  /* grid-auto-rows: 125px 225px; */
+  /* grid-auto-flow: dense; */
+  /* grid-auto-flow: column dense; */
+  /* grid-auto-columns: 300px; */
+
+  gap: 20px;
+  /* gap: 20px 50px; */
+  /* row-gap: 20px; */
+  /* column-gap: 50px; */
+
+  grid-template-rows: 100px 200px 150px;
+  grid-template-columns: 400px 400px 400px minmax(200px, 500px);
+
+  /* justify-items: center; */
+  /* align-items: center; */
+  /* grid-template-columns: [one] 400px [two] 400px [three] 400px [four]; */
+}
+
+.item-1 {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+
+  /* align-self: flex-end; */
+  /* justify-self: flex-end; */
+
+  /*   grid-column-start: span 2;
+  grid-row-start: span 2; */
+
+  /* grid-column: 2/4; */
+  /* grid-column-start: 2; */
+  /* grid-column-end: 4; */
+  /* grid-row: 2/4; */
+  /* grid-row-start: 2; */
+  /* grid-row-end: 4; */
+
+  /* grid-row: 2 / span 2;  */ /* span 2 == от двух отступить 2 = 4 */
+
+  /* grid-column: 1/-1; */
+  /* grid-row: 1 /-1; */
+
+  /* grid-column: one/four; */
+}
+
+.item-2 {
+  grid-column-start: span 2;
+}
+
+.item:nth-child(5) {
+  /* grid-column-start: span 2; */
+  /* grid-row-start: span 2; */
+}
+.item:nth-child(7) {
+  /* grid-column: 2/5; */
+}
+
+/* .wrapper {
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-areas:
+    "headeri headeri headeri"
+    "maini . asidei"
+    "footeri footeri asidei";
+}
+
+.element {
+  border: 1px solid black;
+  text-align: center;
+}
+.header {
+  grid-area: headeri;
+}
+
+.main {
+  grid-area: maini;
+}
+.aside {
+  grid-area: asidei;
+}
+.footer {
+  grid-area: footeri;
+} */

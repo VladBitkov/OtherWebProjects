@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: tomato;
+  padding-left: 50px;
+  border: 10px solid black;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 33.3%;
+  height: 50px;
+  background-color: green;
+  border: 2px solid black;
+  /* float: left; */
+}
